@@ -1,10 +1,5 @@
-#Todo
-#Checking for VapourSynth filter bridge (Python)    : no ('vapoursynth >= 24 vapoursynth-script >= 23' not found)
-#Checking for VapourSynth filter bridge (Lazy Lua)  : no ('vapoursynth >= 24' not found)
-#Checking for VapourSynth filter bridge (core)      : not found any of vapoursynth-lazy, vapoursynth
-
 Name:           mpv
-Version:        0.31.0
+Version:        0.32.0
 Release:        1%{?dist}
 Epoch:          1
 Summary:        Movie player playing most video formats and DVDs
@@ -77,6 +72,9 @@ BuildRequires:  pkgconfig(xrandr) >= 1.2.0
 BuildRequires:  pkgconfig(xscrnsaver) >= 1.0.0
 BuildRequires:  pkgconfig(xv)
 BuildRequires:  pkgconfig(zlib)
+BuildRequires:  pkgconfig(vapoursynth) >= 24
+BuildRequires:  pkgconfig(zimg) >= 2.9
+BuildRequires:  pkgconfig(libarchive)	>= 3.4.0
 
 %if 0%{?fedora} || 0%{?rhel} >= 8
 BuildRequires:  pkgconfig(wayland-egl) >= 9.0.0
@@ -97,7 +95,7 @@ than disk files. Depending on platform, a variety of different video and audio
 output methods are supported.
 
 %package        libs
-Summary:        Dynamic library for Mpv frontends 
+Summary:        Dynamic library for Mpv frontends
 Provides:       libmpv = %{?epoch:%{epoch}:}%{version}-%{release}
 Obsoletes:      libmpv < %{?epoch:%{epoch}:}%{version}-%{release}
 
@@ -173,6 +171,7 @@ fi
 %{_bindir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}*.*
+%{_datadir}/bash-completion/completions/mpv
 %_datadir/zsh/site-functions/*
 %{_mandir}/man1/%{name}.*
 %dir %{_sysconfdir}/%{name}
@@ -188,6 +187,9 @@ fi
 %{_libdir}/pkgconfig/mpv.pc
 
 %changelog
+* Sun Feb 09 2020 Evgeny Lensky <surfernsk@gmail.com> - 1:0.32.0-1
+- Update to 0.32.0 (fadora 31 only)
+
 * Sat Jan 04 2020 Evgeny Lensky <surfernsk@gmail.com> - 1:0.31.0-1
 - Update to 0.31.0
 
