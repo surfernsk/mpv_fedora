@@ -1,6 +1,6 @@
 Name:           mpv
 Version:        0.32.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Epoch:          1
 Summary:        Movie player playing most video formats and DVDs
 License:        GPLv2+ and LGPLv2+
@@ -21,6 +21,8 @@ BuildRequires:  waf
 %if 0%{?fedora} || 0%{?rhel} >= 8
 BuildRequires:  libshaderc-devel
 BuildRequires:  python3-docutils
+BuildRequires:  pkgconfig(vapoursynth) >= 24
+BuildRequires:  pkgconfig(vapoursynth-script) >= 23
 %else
 BuildRequires:  python2-docutils
 %endif
@@ -28,6 +30,7 @@ BuildRequires:  python2-docutils
 BuildRequires:  pkgconfig(alsa) >= 1.0.18
 BuildRequires:  pkgconfig(caca) >= 0.99.beta18
 BuildRequires:  pkgconfig(dvdnav) >= 4.2.0
+BuildRequires:  pkgconfig(dvdread) >= 4.1.0
 BuildRequires:  pkgconfig(egl) >= 9.0.0
 BuildRequires:  pkgconfig(ffnvcodec) >= 8.1.24.1
 BuildRequires:  pkgconfig(gbm)
@@ -36,7 +39,6 @@ BuildRequires:  pkgconfig(jack)
 BuildRequires:  pkgconfig(lcms2) >= 2.6
 BuildRequires:  pkgconfig(libarchive) >= 3.0.0
 BuildRequires:  pkgconfig(libavcodec) >= 58.16.100
-# libavdevice should be >= 57.0.0 but we want to avoid pulling in compat-ffmpeg-devel
 BuildRequires:  pkgconfig(libavdevice) >= 58.0.0
 BuildRequires:  pkgconfig(libavfilter) >= 7.14.100
 BuildRequires:  pkgconfig(libavformat) >= 58.9.100
@@ -72,11 +74,12 @@ BuildRequires:  pkgconfig(xrandr) >= 1.2.0
 BuildRequires:  pkgconfig(xscrnsaver) >= 1.0.0
 BuildRequires:  pkgconfig(xv)
 BuildRequires:  pkgconfig(zlib)
-BuildRequires:  pkgconfig(vapoursynth) >= 24
 BuildRequires:  pkgconfig(zimg) >= 2.9
 BuildRequires:  pkgconfig(libarchive)	>= 3.4.0
 
 %if 0%{?fedora} || 0%{?rhel} >= 8
+BuildRequires:  pkgconfig(libplacebo) >= 1.18.0
+BuildRequires:  pkgconfig(mujs) >= 1.0.0
 BuildRequires:  pkgconfig(wayland-egl) >= 9.0.0
 BuildRequires:  pkgconfig(wayland-protocols) >= 1.14
 %endif
@@ -111,6 +114,15 @@ Requires:       pkgconfig
 
 %description    libs-devel
 Libmpv development header files and libraries.
+
+
+%package zsh
+Summary:        zsh completion functions for MPV
+Requires:       %{name} = %{?epoch:%{epoch}:}%{version}-%{release}
+Requires:       zsh
+
+%description zsh
+zsh completion functions for MPV.
 
 %prep
 %autosetup -p1
@@ -186,7 +198,13 @@ fi
 %{_libdir}/libmpv.so
 %{_libdir}/pkgconfig/mpv.pc
 
+%files zsh
+%{_datadir}/zsh/site-functions/_%{name}
+
 %changelog
+* Sun Feb 09 2020 Evgeny Lensky <surfernsk@gmail.com> - 1:0.32.1-1
+- some fix on .spec (upd from negativo17)
+
 * Sun Feb 09 2020 Evgeny Lensky <surfernsk@gmail.com> - 1:0.32.0-1
 - Update to 0.32.0 (fadora 31 only)
 
