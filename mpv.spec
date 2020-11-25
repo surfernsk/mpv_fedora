@@ -1,6 +1,6 @@
 Name:           mpv
-Version:        0.32.0
-Release:        2%{?dist}
+Version:        0.33.0
+Release:        1%{?dist}
 Epoch:          1
 Summary:        Movie player playing most video formats and DVDs
 License:        GPLv2+ and LGPLv2+
@@ -31,7 +31,7 @@ BuildRequires:  pkgconfig(alsa) >= 1.0.18
 BuildRequires:  pkgconfig(caca) >= 0.99.beta18
 BuildRequires:  pkgconfig(dvdnav) >= 4.2.0
 BuildRequires:  pkgconfig(dvdread) >= 4.1.0
-BuildRequires:  pkgconfig(egl) >= 9.0.0
+BuildRequires:  pkgconfig(egl) >= 1.5
 BuildRequires:  pkgconfig(ffnvcodec) >= 8.1.24.1
 BuildRequires:  pkgconfig(gbm)
 BuildRequires:  pkgconfig(gl)
@@ -202,6 +202,9 @@ fi
 %{_datadir}/zsh/site-functions/_%{name}
 
 %changelog
+* Mon Nov 23 2020 Evgeny Lensky <surfernsk@gmail.com> - 1:0.33.0-1
+- Update to 0.33.0
+
 * Sun Feb 09 2020 Evgeny Lensky <surfernsk@gmail.com> - 1:0.32.1-1
 - some fix on .spec (upd from negativo17)
 
