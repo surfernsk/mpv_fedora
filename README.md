@@ -1,5 +1,5 @@
 # [mpv](https://mpv.io/) for fedora
-Add Fedora repository (Corp fedora repository 31/32/33):  
+Add Fedora repository (Corp fedora repository 33/34):  
 `sudo dnf copr enable surfernsk/Personal_repos`  
 <br>
 <br>
