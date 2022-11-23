@@ -1,6 +1,6 @@
 Name:           mpv
 Version:        0.35.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Epoch:          1
 Summary:        Movie player playing most video formats and DVDs
 License:        GPLv2+ and LGPLv2+
@@ -69,6 +69,8 @@ BuildRequires:  pkgconfig(wayland-scanner)
 BuildRequires:  pkgconfig(x11) >= 1.0.0
 BuildRequires:  pkgconfig(xext) >= 1.0.0
 BuildRequires:  pkgconfig(xinerama) >= 1.0.0
+BuildRequires:  pkgconfig(xpresent) >= 1.0.0
+BuildRequires:  pkgconfig(xfixes) >= 6.0.0
 BuildRequires:  pkgconfig(xkbcommon) >= 0.3.0
 BuildRequires:  pkgconfig(xrandr) >= 1.2.0
 BuildRequires:  pkgconfig(xscrnsaver) >= 1.0.0
@@ -203,6 +205,9 @@ fi
 %{_datadir}/zsh/site-functions/_%{name}
 
 %changelog
+* Wed Nov 23 2022 Evgeny Lensky <surfernsk@gmail.com> - 1:0.35.0-2
+- fix x11 (update x11 BuildRequires)
+
 * Wed Nov 23 2022 Evgeny Lensky <surfernsk@gmail.com> - 1:0.35.0-1
 - bump to 0.35.0
 
