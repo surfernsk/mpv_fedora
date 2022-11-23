@@ -1,5 +1,5 @@
 Name:           mpv
-Version:        0.34.1
+Version:        0.35.0
 Release:        1%{?dist}
 Epoch:          1
 Summary:        Movie player playing most video formats and DVDs
@@ -178,6 +178,7 @@ fi
 
 %files
 %license LICENSE.* Copyright RELEASE_NOTES
+%{_metainfodir}/%{name}.metainfo.xml
 %docdir %{_docdir}/%{name}
 %{_docdir}/%{name}
 %{_bindir}/%{name}
@@ -202,6 +203,9 @@ fi
 %{_datadir}/zsh/site-functions/_%{name}
 
 %changelog
+* Wed Nov 23 2022 Evgeny Lensky <surfernsk@gmail.com> - 1:0.35.0-1
+- bump to 0.35.0
+
 * Fri Jan 14 2022 Evgeny Lensky <surfernsk@gmail.com> - 1:0.34.1-1
 - bump to 0.34.1
 
