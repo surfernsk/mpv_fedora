@@ -1,5 +1,5 @@
 Name:           mpv
-Version:        0.35.0
+Version:        0.35.1
 Release:        2%{?dist}
 Epoch:          1
 Summary:        Movie player playing most video formats and DVDs
@@ -205,6 +205,9 @@ fi
 %{_datadir}/zsh/site-functions/_%{name}
 
 %changelog
+* Tue Jan 31 2023 Evgeny Lensky <surfernsk@gmail.com> - 1:0.35.1-1
+- bump to 0.35.1
+
 * Wed Nov 23 2022 Evgeny Lensky <surfernsk@gmail.com> - 1:0.35.0-2
 - fix x11 (update x11 BuildRequires)
 
