@@ -141,6 +141,7 @@ waf configure \
     --enable-cplugins \
     --enable-dvbin \
     --enable-dvdnav \
+    --enable-drm \
     --enable-libarchive \
     --enable-libmpv-shared \
     --enable-vaapi \
