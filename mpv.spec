@@ -1,6 +1,6 @@
 Name:           mpv
 Version:        0.35.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Epoch:          1
 Summary:        Movie player playing most video formats and DVDs
 License:        GPLv2+ and LGPLv2+
@@ -207,6 +207,9 @@ fi
 %{_datadir}/zsh/site-functions/_%{name}
 
 %changelog
+* Tue Jan 31 2023 Evgeny Lensky <surfernsk@gmail.com> - 1:0.35.1-3
+- bump to 0.35.1
+
 * Tue Jan 31 2023 Evgeny Lensky <surfernsk@gmail.com> - 1:0.35.1-1
 - bump to 0.35.1
 
