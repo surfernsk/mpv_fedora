@@ -143,6 +143,8 @@ waf configure \
     --enable-dvdnav \
     --enable-libarchive \
     --enable-libmpv-shared \
+    --enable-vaapi \
+    --enable-vaapi-drm \
     --enable-html-build \
     --enable-openal \
     --enable-sdl2 \
